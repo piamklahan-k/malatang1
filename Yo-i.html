@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร้านหมาล่ารสเด็ด - Mala Lover</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: #fcfcfc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* --- ส่วน Header (ต้องเหมือนหน้า Index ตามโจทย์) --- */
+        header {
+            background-color: #b30000; /* สีแดงหมาล่า */
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffcc00; /* เปลี่ยนเป็นสีเหลืองเวลาชี้ */
+        }
+
+        /* --- ส่วนเนื้อหาหลัก --- */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .shop-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .shop-header h1 {
+            font-size: 2.5rem;
+            color: #b30000;
+            margin-bottom: 10px;
+        }
+
+        /* --- ส่วนของ CARDS (โจทย์ข้อ 6) --- */
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            border-left: 6px solid #b30000;
+            padding-left: 15px;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body h3 {
+            color: #b30000;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .card-body p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .btn-order {
+            background: #b30000;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        /* --- ส่วน Footer (ต้องเหมือนหน้า Index ตามโจทย์) --- */
+        footer {
+            background-color: #222;
+            color: #ccc;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">🌶️ MALA HUB</div>
+            <ul>
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="shop.html">ร้านแนะนำ</a></li>
+                <li><a href="#">โปรโมชั่น</a></li>
+                <li><a href="#">ติดต่อเรา</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <div class="shop-header">
+            <h1>แนะนำร้านหมาล่า "พ่นไฟ"</h1>
+            <p>สัมผัสความเผ็ดชาต้นตำรับ พร้อมวัตถุดิบส่งตรงจากฟาร์ม</p>
+        </div>
+
+        <h2 class="section-title">เมนูซิกเนเจอร์ (Cards Section)</h2>
+
+        <div class="card-grid">
+            
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=600" alt="Mala Soup">
+                <div class="card-body">
+                    <h3>ซุปหมาล่าเนื้อวัว</h3>
+                    <p>น้ำซุปที่เคี่ยวมากกว่า 12 ชั่วโมง ผสมเครื่องเทศกว่า 20 ชนิด ให้ความเผ็ดชาที่ลงตัวที่สุด</p>
+                    <div class="card-footer">
+                        <span class="price">฿49.-</span>
+                        <a href="#" class="btn-order">สั่งเลย</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1547928576-a4a33237eceb?q=80&w=600" alt="Meat">
+                <div class="card-body">
+                    <h3>เนื้อวากิว A5 สไลด์</h3>
+                    <p>เนื้อวัวเกรดพรีเมียม แทรกไขมันลายหินอ่อน ลวกเพียง 10 วินาที ละลายในปาก</p>
+                    <div class="card-footer">
+                        <span class="price">฿299.-</span>
+                        <a href="#" class="btn-order">สั่งเลย</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=600" alt="Dipping Sauce">
+                <div class="card-body">
+                    <h3>เซ็ตน้ำจิ้มปรุงสำเร็จ</h3>
+                    <p>สูตรลับของทางร้านที่รวมความหอม มัน เผ็ด ไว้ในถ้วยเดียว เข้ากับหมาล่าทุกชนิด</p>
+                    <div class="card-footer">
+                        <span class="price">฿19.-</span>
+                        <a href="#" class="btn-order">สั่งเลย</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </main>
+
+    <footer>
+        <p>จัดทำโดย [ชื่อของคุณ] - ส่วนหนึ่งของ Term Project 2026</p>
+        <p style="margin-top: 10px; font-size: 0.8rem;">Deployed on Vercel via GitHub Codespaces</p>
+    </footer>
+
+</body>
+</html>
