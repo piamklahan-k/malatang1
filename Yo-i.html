@@ -1,245 +1,237 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ร้านหมาล่ารสเด็ด - Mala Lover</title>
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>โยอิซุป - Malatang Around Silpakorn</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Kanit', sans-serif;
-        }
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet" />
 
-        body {
-            background-color: #fcfcfc;
-            color: #333;
-            line-height: 1.6;
-        }
+  <style>
+    :root {
+      --su-green: #009966;
+      --mala-red: #e84e40;
+    }
 
-        /* --- ส่วน Header (ต้องเหมือนหน้า Index ตามโจทย์) --- */
-        header {
-            background-color: #b30000; /* สีแดงหมาล่า */
-            color: white;
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+    body {
+      font-family: 'Kanit', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    /* Header Customization */
+    .custom-header {
+      background-color: var(--su-green);
+      padding: 1rem 0;
+    }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+    .nav-fb {
+      background-color: #fff;
+      color: var(--su-green) !important;
+      border-radius: 50px;
+      padding: 5px 18px !important;
+      font-weight: 600;
+      transition: 0.3s;
+    }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
+    .nav-fb:hover {
+      background-color: #e9ecef;
+      transform: scale(1.05);
+    }
 
-        nav ul li {
-            margin-left: 25px;
-        }
+    /* Carousel Glass Effect */
+    .carousel-item {
+      height: 500px;
+      background-color: #000;
+    }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 400;
-            transition: 0.3s;
-        }
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
 
-        nav ul li a:hover {
-            color: #ffcc00; /* เปลี่ยนเป็นสีเหลืองเวลาชี้ */
-        }
+    .carousel-caption {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px); /* เอฟเฟกต์กระจกฝ้า */
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 20px;
+      border-radius: 20px;
+      right: 5%;
+      bottom: 10%;
+      left: auto;
+      text-align: left;
+      max-width: 350px;
+    }
 
-        /* --- ส่วนเนื้อหาหลัก --- */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
+    /* Badge & Cards */
+    .price-tag {
+      background: linear-gradient(45deg, var(--su-green), #00ba7c);
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      display: inline-block;
+      font-size: 1.4rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0, 153, 102, 0.3);
+    }
 
-        .shop-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+    .card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: #fff;
+    }
 
-        .shop-header h1 {
-            font-size: 2.5rem;
-            color: #b30000;
-            margin-bottom: 10px;
-        }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
 
-        /* --- ส่วนของ CARDS (โจทย์ข้อ 6) --- */
-        .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            border-left: 6px solid #b30000;
-            padding-left: 15px;
-        }
+    .card-img-top {
+      height: 220px;
+      object-fit: cover;
+    }
 
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
+    .section-title {
+      position: relative;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+    }
 
-        .card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid #eee;
-        }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--mala-red);
+    }
 
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-        }
-
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-body h3 {
-            color: #b30000;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .card-body p {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 15px;
-            border-top: 1px dashed #ddd;
-        }
-
-        .price {
-            font-weight: bold;
-            color: #333;
-            font-size: 1.1rem;
-        }
-
-        .btn-order {
-            background: #b30000;
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            text-decoration: none;
-            font-size: 0.85rem;
-        }
-
-        /* --- ส่วน Footer (ต้องเหมือนหน้า Index ตามโจทย์) --- */
-        footer {
-            background-color: #222;
-            color: #ccc;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-        }
-    </style>
+    /* Footer */
+    .custom-footer {
+      background-color: var(--su-green);
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">🌶️ MALA HUB</div>
-            <ul>
-                <li><a href="index.html">หน้าแรก</a></li>
-                <li><a href="shop.html">ร้านแนะนำ</a></li>
-                <li><a href="#">โปรโมชั่น</a></li>
-                <li><a href="#">ติดต่อเรา</a></li>
-            </ul>
-        </nav>
-    </header>
+<header class="custom-header shadow-sm sticky-top">
+  <div class="container d-flex justify-content-between align-items-center">
+    <h4 class="m-0 text-white fw-bold">Malatang Around Silpakorn</h4>
+    <nav>
+      <ul class="nav align-items-center">
+        <li class="nav-item"><a href="index.html" class="nav-link text-white">หน้าแรก</a></li>
+        <li class="nav-item"><a href="https://www.facebook.com/share/1P95c9QLZ4/" target="_blank" class="nav-link nav-fb">FB ร้าน</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-    <main class="container">
-        
-        <div class="shop-header">
-            <h1>แนะนำร้านหมาล่า "พ่นไฟ"</h1>
-            <p>สัมผัสความเผ็ดชาต้นตำรับ พร้อมวัตถุดิบส่งตรงจากฟาร์ม</p>
+<div id="shopCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#shopCarousel" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#shopCarousel" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#shopCarousel" data-bs-slide-to="2"></button>
+  </div>
+  <div class="carousel-inner shadow-sm">
+    <div class="carousel-item active">
+      <img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/581933935_122109611865045631_2784001880220162331_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=7b2446&_nc_ohc=_TffQMXn8SYQ7kNvwHO-Ckh&_nc_oc=AdpNCycrBcJ1DusFHSqu1o8jlqZA4LmyEaR9MosW-qo1P9YpnN5J8eBQcZL_QuhgA6c&_nc_zt=23&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=OUbdhAK0RJxgjx_xvRgo4g&_nc_ss=8&oh=00_Afzwj5W0fHPj83ba_4C-j4mYWmBrPda5AEJhg2jU_ABeHg&oe=69C17FC9" alt="Yo-i Soup Hero">
+      <div class="carousel-caption">
+        <h1 class="fw-bold text-white">Yo-i Soup</h1>
+        <p class="text-white-50">เปิดบริการทุกวัน 11:00 - 02:00 น.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/608239160_122116689561045631_6213000736901820922_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=2a1932&_nc_ohc=BePrvaadUBQQ7kNvwE0Yl92&_nc_oc=Adr7kh7ihZCYXH4yxidrcPYFViK_czihFnDl9rfhLJMpA73S3IqTLYoZBAHFYo8TI0U&_nc_zt=23&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=oaxDGsQ58QepJSTKjKWydg&_nc_ss=8&oh=00_AfxRoeRVFz-j3G5L-tdNVmBnWankUR99NbPw8t404thp9g&oe=69C168C5" alt="Store Info">
+      <div class="carousel-caption">
+        <h3 class="fw-bold text-white">ชยาทิพย์ นครปฐม</h3>
+        <p class="text-white-50">วัตถุดิบสดใหม่ เส้นมันหนึบรอคุณอยู่</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="https://scontent.fbkk14-1.fna.fbcdn.net/v/t39.30808-6/651417433_122125024617045631_2858364137710094619_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=I30yEAniz5MQ7kNvwGSFwZr&_nc_oc=AdruZEjg_K3yHp0-p7MG6Ovn4SEnpWgN2sFHO3V6OIgSvxwiq28q7Fu9iugX95zD6to&_nc_zt=23&_nc_ht=scontent.fbkk14-1.fna&_nc_gid=gvMQggdAcDETD5Izq6IHgg&_nc_ss=8&oh=00_AfwlOGooU03iheXgIiA4_le9OjNppSmhq2T2TRVQjgsqgA&oe=69C16005" alt="Mala Bowl">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#shopCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#shopCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+<main class="container py-5">
+  <div class="row g-5 align-items-center mb-5">
+    <div class="col-lg-6">
+      <div class="position-relative">
+        <img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/555549416_824001406729929_8121546554622362960_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=5wIg-OWyjZsQ7kNvwFM4gGS&_nc_oc=AdpYOjXcHO_Rc_NYUKAIxh7irzQG85HXL7Es86lEhgw2N4TJYQewGIVoBKuqN7yXuiA&_nc_zt=23&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=cD29Y912tQO-XPj5duK55g&_nc_ss=8&oh=00_AfwQLlVH56OZNImPHQbd13ZYm_jzwDZa2j6aqpiOJjF_JA&oe=69C17B0C" 
+             class="img-fluid rounded-4 shadow-lg" alt="Yo-i Soup Storefront">
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <h2 class="fw-bold text-success mb-4">ทำไมต้องโยอิซุป?</h2>
+      <ul class="list-unstyled mb-4">
+        <li class="mb-3"><h5><span class="badge bg-success me-2">✓</span> เส้นหลากหลาย: บะหมี่, อูด้ง, เส้นมัน, บะหมี่หยก</h5></li>
+        <li class="mb-3"><h5><span class="badge bg-success me-2">✓</span> น้ำซุปหลากหลาย เข้มข้มถึงใจ</h5></li>
+        <li class="mb-3"><h5><span class="badge bg-success me-2">✓</span> <strong>น้ำจิ้มฟรี!</strong> ปรุงเองได้ไม่อั้น</h5></li>
+        <li class="mb-3"><h5><span class="badge bg-success me-2">✓</span> วัตถุดิบสดใหม่ คัดเกรดทุกวัน</h5></li>
+      </ul>
+      <div class="text-center text-lg-start">
+        <div class="price-tag">ราคาเพียงขีดละ 29 บาท 💰</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-5 opacity-25">
+
+  <section>
+    <h2 class="text-center fw-bold section-title">เมนูและวัตถุดิบแนะนำ</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <img src="https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/649117926_122124294303045631_4537426783024793255_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=105&ccb=1-7&_nc_sid=7b2446&_nc_ohc=uXffhf9KjCAQ7kNvwFfw2_r&_nc_oc=AdrRnOLSxVgfAwXnKUaW2PrlCnYqOGDgmiw2Yygyh1vcOO7zn9yiKoXdqgi_C2fjk0s&_nc_zt=23&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=sZRMIhl_RAmXzmjxlZfHPw&_nc_ss=8&oh=00_AfyZm4WgnC2n9vv9hdXn9KzTMLCfp4RCpfIPAQm5_TcTSQ&oe=69C19378" class="card-img-top" alt="Meat">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-danger">โปรตีนเน้นๆ</h5>
+            <p class="card-text text-muted">หมูสไลซ์🥓, เนื้อสไลซ์,เนื้อใบพาย,เนื้อริบอาย โดนใจสายเนื้อสุดๆ</p>
+          </div>
         </div>
-
-        <h2 class="section-title">เมนูซิกเนเจอร์ (Cards Section)</h2>
-
-        <div class="card-grid">
-            
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=600" alt="Mala Soup">
-                <div class="card-body">
-                    <h3>ซุปหมาล่าเนื้อวัว</h3>
-                    <p>น้ำซุปที่เคี่ยวมากกว่า 12 ชั่วโมง ผสมเครื่องเทศกว่า 20 ชนิด ให้ความเผ็ดชาที่ลงตัวที่สุด</p>
-                    <div class="card-footer">
-                        <span class="price">฿49.-</span>
-                        <a href="#" class="btn-order">สั่งเลย</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1547928576-a4a33237eceb?q=80&w=600" alt="Meat">
-                <div class="card-body">
-                    <h3>เนื้อวากิว A5 สไลด์</h3>
-                    <p>เนื้อวัวเกรดพรีเมียม แทรกไขมันลายหินอ่อน ลวกเพียง 10 วินาที ละลายในปาก</p>
-                    <div class="card-footer">
-                        <span class="price">฿299.-</span>
-                        <a href="#" class="btn-order">สั่งเลย</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=600" alt="Dipping Sauce">
-                <div class="card-body">
-                    <h3>เซ็ตน้ำจิ้มปรุงสำเร็จ</h3>
-                    <p>สูตรลับของทางร้านที่รวมความหอม มัน เผ็ด ไว้ในถ้วยเดียว เข้ากับหมาล่าทุกชนิด</p>
-                    <div class="card-footer">
-                        <span class="price">฿19.-</span>
-                        <a href="#" class="btn-order">สั่งเลย</a>
-                    </div>
-                </div>
-            </div>
-
+      </div>
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <img src="https://scontent.fbkk14-1.fna.fbcdn.net/v/t39.30808-6/580901642_122109301377045631_2623116409447962832_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_ohc=X9qqSwdsUVQQ7kNvwFuX_tB&_nc_oc=AdrSeE20GVdlCH3gKdUcUrk1UNDnX_dYxWm_K2rSS1bSwDZ31h9EcrseMEuYw7-fIZ8&_nc_zt=23&_nc_ht=scontent.fbkk14-1.fna&_nc_gid=NQovvZNjrKk_zrfbtZMjBQ&_nc_ss=8&oh=00_Afx3oxjejdrvegFuE1IuJYSQjMhHtsQKG21c_Z0IKKON8Q&oe=69C19FEF" class="card-img-top" alt="Noodles">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-danger">สารพัดเส้น</h5>
+            <p class="card-text text-muted">เช่น เส้นแก้ว,บะหมี่หยก,มาม่า เป็นต้น </p>
+          </div>
         </div>
-        </main>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm h-100">
+          <img src="https://scontent.fbkk14-1.fna.fbcdn.net/v/t39.30808-6/579438350_122108746101045631_3266958380341059053_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=7b2446&_nc_ohc=cWRWVSvNu_8Q7kNvwGVJxn_&_nc_oc=AdpXMrhsi2OpCA0fxo4dD6lf2_6bpLv9xAJRzN2q8ASXrhNTXV9pTEKUgC_95M_tvsY&_nc_zt=23&_nc_ht=scontent.fbkk14-1.fna&_nc_gid=cNXacAjfbZvmu691xs5Z4g&_nc_ss=8&oh=00_Afxz-MIX0RQzJzGHPgHiPmYT12y_u4gMUnhCZ8at25-nyQ&oe=69C17F2D" class="card-img-top" alt="Soup">
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold text-danger">ซุปเด็ด 6 สูตร</h5>
+            <p class="card-text text-muted">น้ำซุปหมาล่าม, กระดูกหมู, หมาล่ากระดูกหมู, ซุปน้ำดำ, วูปน้ำดำผสมหมาล่า และหมาล่าผัดแห้ง🔥</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-    <footer>
-        <p>จัดทำโดย [ชื่อของคุณ] - ส่วนหนึ่งของ Term Project 2026</p>
-        <p style="margin-top: 10px; font-size: 0.8rem;">Deployed on Vercel via GitHub Codespaces</p>
-    </footer>
+<footer class="custom-footer text-center py-4 mt-5">
+  <div class="container">
+    <p class="m-0 fw-bold">Malatang Around Silpakorn Project</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
